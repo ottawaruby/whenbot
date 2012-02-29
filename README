@@ -1,0 +1,48 @@
+Whenbot - a personal open source ifttt.com clone. (check out
+http://ifttt.com)
+
+The idea: A simple web service that runs on Heroku that lets you
+listen on certain triggers and perform actions to other web services
+based on that.
+
+For example: Whenever I post an Instagram photo, create a Tumblr blog post.
+
+It would be personal - in that it's meant for each person who wants to
+run it to clone the repo, and host it on their own Heroku instance.
+Heroku provides enough free addons and services that you can get it up
+and running and functional without paying for anything (or at the
+most, a few bucks a month).
+
+Basic premise is that you have:
+
+Triggers - things that you listen on (new instagram post, a tweet, a
+new email, a new RSS feed entry, etc.). This can be a scheduled
+polling to a certain API endpoint (heroku offers regular schedule
+tasks every 10 minutes), or webhook endpoints.
+
+Parsers - things that take the output from a trigger, and
+massages/normalizes the data into a known format that can be consumed
+by...
+
+Publishers - things that you publish to (send a tweet, create a Tumblr
+post, send an email, etc.)
+
+The basic engine could be a very simple app, and the Triggers,
+Parsers, and Publishers can be individual modules/classes. This would
+allow people to work on various triggers, publishers, etc. on their
+own while still contributing to the project as a whole. There'd also
+be UI work to create the actions, configure services, etc.
+
+Most triggers and publishers would just be using various API wrappers
+for web services like Flickr, Tumblr, Posterous, etc. This would be a
+great way for people to get exposed to APIs from various web services.
+Some are complicated, some are pretty simple, so there'd be lots to
+choose from.
+
+I created a simple Instagram => Tumblr / Posterous app for
+http://luuunch.com which I could show. It uses a ridiculously simple
+Tumblr publisher, Posterous publisher and an Instagram webhook
+trigger.
+
+An immediate use case for something like this would be to create an
+instagram / flickr / etc. feed to add to the OttawaRuby  website.
