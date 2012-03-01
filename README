@@ -1,6 +1,11 @@
 Whenbot - a personal open source ifttt.com clone. (check out
 http://ifttt.com)
 
+Wiki page with more info: https://github.com/ottawaruby/whenbot/wiki/_pages
+
+simple luuunchbot app: https://github.com/redronin/luuunchbot
+
+
 The idea: A simple web service that runs on Heroku that lets you
 listen on certain triggers and perform actions to other web services
 based on that.
