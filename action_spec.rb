@@ -4,11 +4,9 @@ describe Action do
 
   before(:each)do
     @user=Factory(:user)
-    @trigger=Factory(:trigger)
-    @publisher=Factory(:publisher)
-    @trigger_settings={ #not sure what goes here yet}
-    @publisher_settings={ #not sure what goes here yet}
-    @attr={:trigger=> @trigger, :publisher => @publisher, :trigger_settings => @trigger_settings, :publisher_settings => @publisher_settings}
+
+    #  Apparently Factory Girl can't do this.  Haha, whoops.
+
   end
   
   it"should create a new instance given valid attributes"do
