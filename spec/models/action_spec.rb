@@ -5,25 +5,23 @@ describe Action do
   before(:each)do
     @user=Factory(:user)
 
-    #  Apparently Factory Girl can't do this.  Haha, whoops.
-
   end
   
-  it"should create a new instance given valid attributes"do
+  it "should create a new instance given valid attributes" do
     @user.actions.create!(@attr)
   end
   
-  describe"user associations"do
+  describe "user associations" do
     
     before(:each)do
       @action=@user.actions.create(@attr)
     end
   
-    it"should have a user attribute"do
+    it "should have a user attribute" do
       @action.should respond_to(:user)
     end
   
-    it"should have the right associated user"do
+    it "should have the right associated user" do
       @action.user_id.should == @user.id
       @action.user.should == @user
     end
@@ -36,7 +34,7 @@ describe Action do
       @action.should respond_to(:trigger)
     end
 
-    it"should have the right associated trigger"do
+    it "should have the right associated trigger" do
       @trigger.action_id.should == @action.id
       @trigger.action.should == @action
     end
@@ -50,7 +48,7 @@ describe Action do
       @action.should respond_to(:publisher)
     end
 
-    it"should have the right associated publisher"do
+    it "should have the right associated publisher" do
       @publisher.action_id.should == @action.id
       @publisher.action.should == @action
     end
