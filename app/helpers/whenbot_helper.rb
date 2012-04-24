@@ -1,0 +1,2 @@
+module WhenbotHelper
+end
