@@ -20,9 +20,9 @@ module Whenbot
   # action to the proper Trigger class.
   #
   def self.relay_callback(channel, trigger, triggers, url_params, headers, body)
-    # ==== One-liner 2 ====
+    klass = build_class_constant(channel, trigger)
     if klass
-      # ==== One-liner 3 ====
+    	klass.callback(triggers, url_params, headers, body)
     else
       :error
     end
@@ -32,14 +32,14 @@ module Whenbot
   # Handles "config do" block. To be used from intializer.
   #
   def self.config
-    # ==== One-liner 4 ====
+    channels = yield self
   end
   
   #
   # Overloaded accessor to ensure that we always return an array
   #
   def self.channels
-    # ==== One-liner 5 ====
+    Array(@@channels)
   end
   
   #
@@ -47,7 +47,8 @@ module Whenbot
   # Array values are strings. E.g. 'Developer'
   #
   def self.trigger_channels
-    trigger_channels_as_consts.collect { |channel| # ==== One-liner 6 ==== }
+    trigger_channels_as_consts.collect { |channel| # ==== One-liner 6 ====
+    }
   end
 
   #
@@ -82,7 +83,7 @@ module Whenbot
     # Happens if we can't find the Channel or Trigger.
     # Log, email exception (Exceptional? Hoptoad? New Relic?)
     Rails.logger.error "[ERROR] NameError. Message = #{e.message}"
-    # ==== One-liner 9 ====
+    raise e
   end
 
 
