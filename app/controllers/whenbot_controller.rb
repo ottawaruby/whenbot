@@ -4,7 +4,7 @@ class WhenbotController < ApplicationController
   def callback
     
     # ==== One-liner 13 ====
-    # ==== One-liner 14 ====
+    response = validate_response response
     
     if response[:head_only]
       # ==== One-liner 15 ====
