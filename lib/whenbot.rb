@@ -76,7 +76,7 @@ module Whenbot
   # Helper method to find the constant for the given Channel and Trigger
   #
   def self.build_class_constant(channel, trigger)
-    # ==== One-liner 8 ====
+    raise ArgumentError, "Need both a Channel and Trigger to match" unless channel && trigger
     klass = Whenbot::Channels::const_get(channel.camelize)::Triggers::const_get(trigger.camelize)
   rescue NameError => e
     # Happens if we can't find the Channel or Trigger.
