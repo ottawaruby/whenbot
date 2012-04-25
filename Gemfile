@@ -13,6 +13,8 @@ gem 'pg'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+  
+  gem 'less-rails-bootstrap'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platform => :ruby
@@ -21,6 +23,9 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+# Form builders
+gem 'simple_form'
 
 gem 'heroku'
 
@@ -32,6 +37,9 @@ end
 group :development do
   #gem 'ruby-debug19', :require => 'ruby-debug' # To use debugger
   gem 'rails-footnotes', '>= 3.7'
+  
+  # Silence asset messages in the development log
+  gem 'quiet_assets'
 end
 
 group :test do

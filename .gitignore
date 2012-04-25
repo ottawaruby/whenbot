@@ -22,3 +22,5 @@
 
 # Random files to ignore
 /lib/whenbot/old_trigger.rb
+
+Gemfile.lock
