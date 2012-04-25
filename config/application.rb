@@ -15,6 +15,8 @@ module Whenbot
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    # Add the X-who-loves-you header to all requests
+    config.middleware.use 'AddLove'
     # Custom directories with classes and modules you want to be autoloadable.
     config.autoload_paths += Dir["#{config.root}/lib"] 
     # Was: config.autoload_paths += Dir["#{config.root}/lib", "#{config.root}/lib/**/"] 
