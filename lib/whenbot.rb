@@ -32,7 +32,7 @@ module Whenbot
   # Handles "config do" block. To be used from intializer.
   #
   def self.config
-    # ==== One-liner 4 ====
+    channels = yield self
   end
   
   #
@@ -47,7 +47,8 @@ module Whenbot
   # Array values are strings. E.g. 'Developer'
   #
   def self.trigger_channels
-    trigger_channels_as_consts.collect { |channel| # ==== One-liner 6 ==== }
+    trigger_channels_as_consts.collect { |channel| # ==== One-liner 6 ====
+    }
   end
 
   #
