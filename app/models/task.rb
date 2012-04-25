@@ -1,5 +1,5 @@
 class Task < ActiveRecord::Base
-  # ==== One-liner 18 ====
+  has_many :triggers
   # ==== One-liner 19 ====
   
   accepts_nested_attributes_for :triggers, :actions
