@@ -82,7 +82,7 @@ module Whenbot
     # Happens if we can't find the Channel or Trigger.
     # Log, email exception (Exceptional? Hoptoad? New Relic?)
     Rails.logger.error "[ERROR] NameError. Message = #{e.message}"
-    # ==== One-liner 9 ====
+    raise e
   end
 
 
