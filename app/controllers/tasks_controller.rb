@@ -3,6 +3,6 @@ class TasksController < ApplicationController
   end
 
   def new
-    # ==== One-liner 12 ====
+      @channels = Whenbot.trigger_channels
   end
 end
