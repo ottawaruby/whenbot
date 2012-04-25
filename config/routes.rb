@@ -1,10 +1,9 @@
 Whenbot::Application.routes.draw do
 
   # Routes calls to appropriate Trigger
-  match '/whenbot/:channel/:trigger/callback' => 'whenbot#callback'
-  
-  get "tasks/index"
-  get "tasks/new"
+  get '/whenbot/:channel/:trigger/callback', to: 'whenbot#callback', as: 'whenbot_callback'
+ 
+  resources :tasks, :only => [:index, :new] 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -61,5 +60,7 @@ Whenbot::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
+  # WARNING: This route will expose all actions in every controller to CSRF attacks.
+  # DO NOT USE
   # match ':controller(/:action(/:id))(.:format)'
 end
