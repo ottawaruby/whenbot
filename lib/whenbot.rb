@@ -39,7 +39,7 @@ module Whenbot
   # Overloaded accessor to ensure that we always return an array
   #
   def self.channels
-    # ==== One-liner 5 ====
+    Array(@@channels)
   end
   
   #
