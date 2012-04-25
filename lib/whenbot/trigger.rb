@@ -4,7 +4,7 @@ module Whenbot
   module Trigger
     
     def self.included(base)
-      # ==== One-liner 10 ====
+      base.extend ClassMethods
     end
 
     module ClassMethods
