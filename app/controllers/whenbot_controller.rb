@@ -7,7 +7,7 @@ class WhenbotController < ApplicationController
     response = validate_response response
     
     if response[:head_only]
-      # ==== One-liner 15 ====
+      head response[:status]  # ==== One-liner 15 ====
     else
       render response[:type] => response[:body], 
              :status => response[:status], 
