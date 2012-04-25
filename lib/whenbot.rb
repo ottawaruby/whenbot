@@ -20,7 +20,7 @@ module Whenbot
   # action to the proper Trigger class.
   #
   def self.relay_callback(channel, trigger, triggers, url_params, headers, body)
-    # ==== One-liner 2 ====
+    klass = build_class_constant(channel, trigger)
     if klass
       # ==== One-liner 3 ====
     else
