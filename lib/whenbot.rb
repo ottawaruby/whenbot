@@ -22,7 +22,7 @@ module Whenbot
   def self.relay_callback(channel, trigger, triggers, url_params, headers, body)
     # ==== One-liner 2 ====
     if klass
-      # ==== One-liner 3 ====
+    	klass.callback(triggers, url_params, headers, body)
     else
       :error
     end
