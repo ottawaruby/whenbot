@@ -59,7 +59,7 @@ module Whenbot
   #
   def self.trigger_channels_as_consts
     channels.select do |channel|
-      # ==== One-liner 7 ====
+      has_triggers?(channel)
     end
   end
   
