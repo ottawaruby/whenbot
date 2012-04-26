@@ -18,7 +18,7 @@ class WhenbotController < ApplicationController
   private
   
   def validate_response(response)
-    # ==== One-liner 16 ====
+    response ||= {}
     response[:head_only]  ||= response[:body] ? false : true
     response[:status]     ||= :ok
     response[:type]       ||= :json
