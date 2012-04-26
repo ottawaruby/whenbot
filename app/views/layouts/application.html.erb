@@ -1,14 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
 <head>
+  <meta charset='utf-8'>
   <title>Whenbot</title>
+  
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </a>
+        
+        <!-- Be sure to leave the brand out there if you want it shown -->
+        <a class="brand" href="/">Whenbot</a>
+        
+        <!-- Everything you want hidden at 940px or less, place within here -->
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="divider-vertical"></li>
+            <li><%= link_to 'Tasks', tasks_path %></li>
+          </ul>
+          
+          <ul class="nav pull-right">
+            <li class="divider-vertical"></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Settings <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href='#'>My Account</a></li>
+              <ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<%= yield %>
-
+  <div class="container">
+    <%= render 'layouts/notice' unless notice.blank? %>
+    <%= yield %>
+  </div>
 </body>
 </html>

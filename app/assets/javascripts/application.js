@@ -13,3 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require twitter/bootstrap
+
+// Initialize Twitter Bootstrap dropdowns
+$('.dropdown-toggle').dropdown()
