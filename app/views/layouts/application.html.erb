@@ -3,17 +3,12 @@
 <head>
   <meta charset='utf-8'>
   <title>Whenbot</title>
-<<<<<<< HEAD
-  
-=======
-  
->>>>>>> 379f550bd4fac01f1cdbb65947c9f0f98a5d6ac7
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<<<<<<< HEAD
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
@@ -52,9 +47,14 @@
   <div class="container">
     <%= render 'layouts/notice' unless notice.blank? %>
     <%= yield %>
-=======
-		<small>♥ WHENBOT LOVES YOU ♥</small>
->>>>>>> 379f550bd4fac01f1cdbb65947c9f0f98a5d6ac7
+
+    <footer>
+  		<div align='center'>
+	  		<p>
+	  			<small>♥ WHENBOT LOVES YOU  ♥</small>
+				</p>
+			</div>
+	  </footer>
   </div>
 </body>
 </html>
