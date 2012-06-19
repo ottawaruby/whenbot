@@ -11,7 +11,7 @@ module Whenbot
       
       # Use this when setting :last_matched value
       def current_time
-        # ==== One-liner 11
+        Time.zone.now
       end
 
     end
