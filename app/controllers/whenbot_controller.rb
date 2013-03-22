@@ -24,6 +24,6 @@ class WhenbotController < ApplicationController
     response[:type]       ||= :json
     response[:headers]    ||= ''
     response[:body]       ||= 'Success'
-    return response
+    response
   end
 end
